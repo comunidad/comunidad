@@ -113,6 +113,7 @@ i.title-icon{
 .bred{background: #fa3031;color: #fff; border:0px;}
 .bviolet{background: #932ab6;color: #fff;border: 0px;}
 .bgray{background: gray;color: #fff ;border: 0px;}
+.bplomizo{background: rgb(49,57,59);border: 0px;}
 
 .blightblue h2,.blightblue h3, .blightblue h4, .blightblue h5, .blightblue h6,
 .bblue h2,.bblue h3, .bblue h4, .bblue h5, .bblue h6,
@@ -120,7 +121,8 @@ i.title-icon{
 .bred h2,.bred h3, .bred h4, .bred h5, .bred h6,
 .bviolet h2,.bviolet h3, .bviolet h4, .bviolet h5, .bviolet h6,
 .borange h2,.borange h3, .borange h4, .borange h5, .borange h6
-.bgray h2,.bgray h3, .bgray h4, .bgray h5, .bgray h6{color: #fff !important;}
+.bgray h2,.bgray h3, .bgray h4, .bgray h5, .bgray h6,
+.bplomizo h2, .bplomizo h3, .bplomizo h4, .bplomizo h5, .bplomizo h6,{color: #fff !important;}
  
 
 /* Text colors */
@@ -177,8 +179,8 @@ form label{font-size: 13px;line-height: 13px;}
 .slidepanel .social{float: right}
 
 /* Header */
-header{/*height: 120px;*/margin-bottom: 25px;}
-header .logo{/*height: 120px;*/padding: 0px;margin: 0px;}
+header{margin-bottom: 5px;}
+header .logo{padding: 0px;margin: 0px;}
 header .logo .logo-image{width: 50px;float: left;}
 header .logo .logo-image i{width: 50px;height: 50px;line-height: 50px;font-size: 50px;margin-top: 30px;}
 header .logo .logo-text{margin-left: 70px;}

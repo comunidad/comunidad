@@ -23,3 +23,18 @@ TALLERES
 otros:
 ======
 grupos: miembros de campo, Miembros virtuales, bloggeros, periodistas, etc
+
+
+INSTALACION
+===========
+
+El proceso de intalacion es:
+	pip install -r requerimientos.txt
+
+descargara:
+	Django==1.6.2 //framework django el cual es base para el proyecto de la web
+	MySQL-python==1.2.4	//base de datos para la web
+
+
+
+
