@@ -1,0 +1,126 @@
+{% extends '_partials/base.html' %}
+
+{% block contenedor %}
+{% load static from staticfiles %}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs margin-bottom-40">
+	<div class="container">
+		<h3 class="pull-left breadcrumb c-plomo">Blog</h3>
+	</div>
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part ===-->
+<div class="container">     
+	<div class="row blog-page">    
+		<!-- Left Sidebar -->
+		<div id="articulo" class="col-md-9 md-margin-bottom-40">
+			{% for art in articulos %}
+			<!--Blog Post-->
+			<div class="row blog blog-medium margin-bottom-40">   
+				<div class="col-md-7">
+					<h2>{{ art.titulo }}</h2>
+					<ul class="list-unstyled list-inline blog-info">
+						<li><i class="icon-calendar"></i>{{art.fecha_publicada}}</li>
+						<li><i class="icon-comments"></i> <a href="#">{{art.num_comentarios}} Comentarios</a></li>
+						<li><i class="icon-tags"></i>{{art.tag_articulo}} </li>
+					</ul>
+					<p>{{art.contenido_articulo}}</p>
+					<p><a href="#" class="btn-u btn-u-small" ><i class="icon-location-arrow "></i> Leer Mas</a></p>
+				</div>
+				<div class="col-md-5">
+					<img class="img-responsive" src="{% static "img/main/11.jpg" %}" alt="">
+				</div> 
+			</div>
+			<!--End Blog Post-->        
+
+			<hr class="margin-bottom-40">       
+			{% endfor %}
+
+			<!--Pagination-->
+			<div class="text-center">
+				<ul class="pagination">
+					<li><a href="#">«</a></li>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li class="active"><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">6</a></li>
+					<li><a href="#">7</a></li>
+					<li><a href="#">8</a></li>
+					<li><a href="#">»</a></li>
+				</ul>                                                            
+			</div>
+			<!--End Pagination-->
+		</div>
+		<!-- End Left Sidebar -->
+
+
+		<!-- Right Sidebar -->
+		<div class="col-md-3">
+			<!-- Social Icons -->
+			<div class="magazine-sb-social margin-bottom-30">
+				<div class="headline headline-md"><h2>Social Icons</h2></div>
+				<ul class="social-icons social-icons-color">
+					<li><a href="#" class="bblue"><i class="icon-facebook"></i></a></li>
+					<li><a href="#" class="borange"><i class="icon-google-plus"></i></a></li> 
+					<li><a href="#" class="blightblue"><i class="icon-twitter"></i></a></li>
+					<li><a href="#" class="bviolet"><i class="icon-linkedin"></i></a></li>
+					<li><a href="#" class="bred"><i class="icon-pinterest"></i></a></li>
+					<li><a href="#" class="borange"><i class="icon-rss"></i></a></li>
+				</ul>
+				<div class="clearfix"></div>                
+			</div>
+			<!-- End Social Icons -->
+
+			<!-- Blog Latest Tweets -->
+			<div class="blog-twitter">
+				<div class="headline headline-md"><h2>Latest Tweets</h2></div>
+				<div class="blog-twitter-inner">
+					<i class="icon-twitter"></i>
+					<a href="#">@htmlstream</a> 
+					At vero eos et accusamus et iusto odio dignissimos. 
+					<a href="#">http://t.co/sBav7dm</a> 
+					<span>5 hours ago</span>
+				</div>
+				<div class="blog-twitter-inner">
+					<i class="icon-twitter"></i>
+					<a href="#">@htmlstream</a> 
+					At vero eos et accusamus et iusto odio dignissimos. 
+					<a href="#">http://t.co/sBav7dm</a> 
+					<span>5 hours ago</span>
+				</div>
+				<div class="blog-twitter-inner">
+					<i class="icon-twitter"></i>
+					<a href="#">@htmlstream</a> 
+					At vero eos et accusamus et iusto odio dignissimos. 
+					<a href="#">http://t.co/sBav7dm</a> 
+					<span>5 hours ago</span>
+				</div>
+			</div>
+			<!-- End Blog Latest Tweets -->
+		</div>
+		<!-- End Right Sidebar -->
+	</div><!--/row-->        
+</div><!--/container-->     
+<!--=== End Content Part ===-->
+
+
+{% endblock %} 
+  
+{% block javascript %}
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29166220-1']);
+  _gaq.push(['_setDomainName', 'htmlstream.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{% endblock %} 

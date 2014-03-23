@@ -1,0 +1,40 @@
+{% extends '_partials/base.html' %}
+
+{% block contenedor %}
+{% load static from staticfiles %}
+
+<!-- Page heading -->
+<!-- Give background color class on below line (bred, bgreen, borange, bviolet, blightblue, bblue) -->
+<div class="bgray">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<h2 class="pull-left"><i class="icon-arrow-right title-icon"></i>Actividades</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Page heading ends -->
+
+<!-- Content starts -->
+<div class="content">
+	<div class="container">
+		<div class="tasks">
+			<div class="row">
+				<div class="span12">
+					<h3>Today 24/12/2012</h3>
+					<!-- Add the class "important" or "cool" for red and green border -->
+					{% for act in actividades %}
+					<div class="task important">
+						<h4>{{act.titulo}}</h4>
+						<div class="tmeta"><i class="icon-calendar"></i>{{act.fecha_inicio}} - {{act.fecha_de_termino}}<i class="icon-pushpin"></i>{{act.Lugar}}</div>
+						<p>{{act.contenido}}</p>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Content ends -->
+{% endblock %}

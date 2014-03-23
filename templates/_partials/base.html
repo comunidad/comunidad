@@ -1,0 +1,210 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<!-- Title and other stuffs -->
+	<title>{% block titulo %} {% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+
+	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap3.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-responsive.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/ddlevelsmenu-base.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/ddlevelsmenu-topbar.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/slider.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/prettyPhoto.css" %}">
+	<link rel="shortcut icon" href="img/favicon/favicon.png">
+
+	<script type="text/javascript" src="{% static "js/bootstrap.js" %}"></script> <!-- Bootstrap -->
+	<script type="text/javascript" src="{% static "js/jquery.prettyPhoto.js" %}"></script> <!-- prettyPhoto -->
+	<script type="text/javascript" src="{% static "js/jquery.isotope.js" %}"></script> <!-- isotope -->
+	<script type="text/javascript" src="{% static "js/ddlevelsmenu.js" %}"></script> <!-- Navigation menu -->
+
+</head>
+
+<body>
+	<!-- Sliding panel starts-->
+	<div class="slidepanel">
+		<div class="container">
+			<div class="row">
+				<div class="span8">
+					<div class="spara"> 
+					<!-- Contact details -->
+						<p>
+							<i class="icon-envelope-alt lightblue"></i> <a href="#">comunidadverde@gmail.com</a> &nbsp; 
+							<i class="icon-twitter lightblue"></i> <a href="www.twitter.com/comverde/">@comverde</a> &nbsp; 
+							<i class="icon-desktop lightblue"></i> 548-8444
+						</p>
+					</div>
+				</div>
+				
+				<div class="span4">
+					<div class="social">
+						<!-- Social media icons. Repalce # with your profile links -->
+						<a href="#" class="bblue"><i class="icon-facebook"></i></a>
+						<a href="#" class="borange"><i class="icon-google-plus"></i></a> 
+						<a href="#" class="blightblue"><i class="icon-twitter"></i></a>
+						<a href="#" class="bviolet"><i class="icon-linkedin"></i></a>
+						<a href="#" class="bred"><i class="icon-pinterest"></i></a>
+						<a href="#" class="borange"><i class="icon-rss"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- Sliding panel ends-->
+
+	<!-- Header starts -->
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="span4">
+					<!-- Logo starts -->
+					<div class="logo">
+						<h1>
+							<a class="nolink" href="{% url 'inicio' %}">
+								Comunidad
+								<span class="green">Verde</span>
+							</a>
+						</h1>
+						<div class="clearfix"></div>
+					</div>
+					<!-- Logo ends -->
+				</div>
+				<div class="span8">
+					<!-- Navbar starts -->
+					<div class="navi pull-right">
+						<div id="ddtopmenubar" class="mattblackmenu">
+							<!-- Main navigation -->
+							<!-- Use the background color class in anchor tag for colorful menu -->
+							<ul>
+								<li><a href="{% url 'inicio' %}" class="blightblue">Home</a></li>
+								
+								<li><a href="#" rel="ddsubmenu2" class="bviolet">Pages</a>
+									<ul id="ddsubmenu2" class="ddsubmenustyle">
+										<li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+										<li><a href="{% url 'contactenos' %}">Contactenos</a></li>
+										<li><a href="{% url 'unete' %}">Unete</a></li>
+										<li><a href="{% url 'aliados' %}">Aliados</a></li>
+									</ul>
+								</li>
+								<li><a href="{% url 'blog' %}" class="bgreen">Blog</a></li>
+								<li><a href="{% url 'noticias' %}" class="bgreen">Noticias</a></li>
+								<li><a href="{% url 'cronograma' %}" class="borange">Cronograma</a></li>
+								<li><a href="{% url 'contactenos' %}" class="bblue">Contactenos</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="navis"></div>
+					<!-- Navbar ends -->
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="clearfix"></div>
+	<!-- Header ends -->
+	
+	{% block contenedor %}{% endblock %}
+
+	<!-- Footer -->
+	<!-- Below area is for testimonial -->
+	<div class="foot bgray">
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<p><em>"Se el cambio que quieres ver"</em></p>
+				</div>
+			</div>
+		</div>
+	</div>  
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="widgets">
+					<div class="col-md-3 col-sm-6">
+						<div class="fwidget">
+							<h4>Contactenos</h4><hr/>
+							<i class="icon-home"></i> &nbsp; Rimac, cruze av. Jose Granda y av. Universitaria, mercado civico, Husares de Junin Mz. L. lote 09, casa de washin<hr/>
+							<i class="icon-phone"></i> &nbsp; 980 733 800 / 961062800<hr />
+							<i class="icon-envelope-alt"></i> &nbsp; <a href="mailto:#">contactar@cverde.org</a><hr/>
+							<div class="social">
+								<a href="#" class="bblue"><i class="icon-facebook"></i></a>
+								<a href="#" class="borange"><i class="icon-google-plus"></i></a> 
+								<a href="#" class="blightblue"><i class="icon-twitter"></i></a>
+								<a href="#" class="bviolet"><i class="icon-linkedin"></i></a>
+								<a href="#" class="bred"><i class="icon-pinterest"></i></a>
+								<a href="#" class="borange"><i class="icon-rss"></i></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-3 col-sm-6">
+						<div class="fwidget">
+							<h4>Categorias</h4>
+							<ul>
+								<li><a href="#">Eduación</a></li>
+								<li><a href="#">Valores</a></li>
+								<li><a href="#">Medio Ambiente</a></li>
+								<li><a href="#">abcde</a></li>
+								<li><a href="#">otras1</a></li>
+								<li><a href="#">xxx</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-6">
+						<div class="fwidget">
+							<h4>Subscribete</h4>
+							<p>Suscribete a nuestras noticias</p>
+							<form class="form-inline">
+								<div class="input-append row-fluid">
+									<input type="text" class="span8" placeholder="Subscribete">
+									<button type="submit" class="btn btn-danger">Subscribete</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-6">
+						<div class="fwidget">
+							<h4>Posts Recientes</h4>
+							<ul>
+								<li><a href="#">Post ##########001</a></li>
+								<li><a href="#">Post ##########002</a></li>
+								<li><a href="#">Post ##########003</a></li>
+								<li><a href="#">Post ##########004</a></li>
+								<li><a href="#">Post ##########005</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+	
+				<div class="span12">
+					<div class="copy">
+						<p>Copyright &copy; <a href="#">Comunidad.la</a> - <a href="{% url 'inicio' %}">Home</a> | <a href="{% url 'nosotros' %}">Nosotros</a> | <a href="{% url 'contactenos' %}">Contactenos</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</footer>
+
+	<!-- JS -->
+	<script type="text/javascript" src="{% static "js/jquery.js" %}"></script> <!-- jQuery -->
+	<script type="text/javascript" src="{% static "js/jquery.cslider.js" %}"></script> <!-- jQuery cSlider -->
+	<script type="text/javascript" src="{% static "js/modernizr.js" %}"></script> <!-- Extra script for cslider -->
+
+	<script type="text/javascript" src="{% static "js/filter.js" %}"></script> <!-- Support -->
+	<script type="text/javascript" src="{% static "js/custom.js" %}"></script> <!-- Custom JS -->
+	{% block javascript %}{% endblock %}
+</body>
+</html>

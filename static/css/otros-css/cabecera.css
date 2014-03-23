@@ -1,0 +1,62 @@
+/* nav */
+nav{}
+nav ul{display: inline-block;margin: 5px 6px;}
+nav ul li{margin: 2px 0;}
+nav ul li a{font-size: 22px;margin: 10px;}
+nav ul li a:hover{color: purple;text-decoration: none;}
+
+/* logo */
+.logo{float: left;}
+.logo a{width: 100%;}
+.logo a img{width: 250px;}
+
+
+/* cabecera */
+.cabecera{width: 100%;padding: 5px;}
+
+.top-header{height: 20px;}
+.sub-header{display: inline-block;font-size: 16px; margin: -25px;}
+
+header{display: inline-block;width: 100%;}
+
+/*Header */
+
+header .navbarksskdkdkd {
+	min-height: inherit;
+	font-weight:400;
+	text-transform: uppercase;
+	font-size: 12px;
+	position: relative;
+	margin: 0 !important;
+	position: absolute;
+	box-shadow: 0 1px 3px #ddd; 
+	cursor: pointer;
+	text-align: center;
+}
+
+/* derecha e izquiersa*/
+.derecha{float: right;}
+.izquierda{float: left;}
+
+/* barras a los costados*/
+.barra-d{border-right: solid 2px gray;}/*barra derecha*/
+.barra-a{border-top: solid 2px gray;}/*barra arriba*/
+.barra-i{border-left: solid 2px gray;}/*barra izquierda*/
+.barra-b{border-bottom: solid 2px gray;}/*barra debajo*/
+
+/* colores de texto */
+.ct1{color: green;}
+.ct2{color: blue;}
+
+/* tamaños de fuente*/
+.tf0{font-size:15px;}
+.tf1{font-size:18px;}
+.tf2{font-size:20px;}
+.tf3{font-size:22px;}
+.tf4{font-size:24px;}
+
+
+
+
+
+

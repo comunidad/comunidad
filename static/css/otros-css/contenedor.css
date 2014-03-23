@@ -1,0 +1,22 @@
+.contenedor{
+	background: orange;
+	/*display: inline-block;*/
+	/*height: 800px;*/
+}
+.contenedor-superior{
+	background: rgb(30,25,250);
+	height: 50px;
+}
+.contenedor-inferior{}
+
+
+.caja-central{
+	display: inline-block;
+	height: 150px;
+	margin: 5px;
+	padding: 5px 10px;
+	text-align: center;
+}
+.caja-central h2{
+	text-shadow:1px 1px black;
+}
