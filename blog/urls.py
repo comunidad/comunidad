@@ -1,10 +1,56 @@
-from django.conf.urls import patterns, include, url
+from django.conf import settings
+from django.contrib import admin
+from django.conf.urls import url
+from django.conf.urls import include
+from django.conf.urls import patterns
+from django.views.generic.base import RedirectView
 
-from blog.views import articulo
+from zinnia.sitemaps import TagSitemap
+from zinnia.sitemaps import EntrySitemap
+from zinnia.sitemaps import CategorySitemap
+from zinnia.sitemaps import AuthorSitemap
 
-urlpatterns = patterns('',
-	url(r'^articulo/(?P<id>\d+)$', 'blog.views.articulo', name='articulo'),
-	url(r'^todos/$', 'blog.views.articulos'),
-	url(r'^obtener/(?P<articulo_id>\d+)/$', 'blog.views.articulo'),
-	url(r'^agregar_comentario/(?P<articulo_id>\d+)/$', 'blog.views.agregar_comentario'),
+admin.autodiscover()
+handler500 = 'django.views.defaults.server_error'
+handler404 = 'django.views.defaults.page_not_found'
+handler403 = 'django.views.defaults.permission_denied'
+
+urlpatterns = patterns(
+    '',
+    #url(r'^$', RedirectView.as_view(url='/blog/')),
+    url(r'^blog/', include('zinnia.urls')),
+    url(r'^comments/', include('django.contrib.comments.urls')),
+    url(r'^xmlrpc/$', 'django_xmlrpc.views.handle_xmlrpc'),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
 )
+
+sitemaps = {
+    'tags': TagSitemap,
+    'blog': EntrySitemap,
+    'authors': AuthorSitemap,
+    'categories': CategorySitemap
+}
+
+urlpatterns += patterns(
+    'django.contrib.sitemaps.views',
+    url(r'^sitemap.xml$', 'index',
+        {'sitemaps': sitemaps}),
+    url(r'^sitemap-(?P<section>.+)\.xml$', 'sitemap',
+        {'sitemaps': sitemaps}),
+)
+
+urlpatterns += patterns(
+    '',
+    url(r'^403/$', 'django.views.defaults.permission_denied'),
+    url(r'^404/$', 'django.views.defaults.page_not_found'),
+    url(r'^500/$', 'django.views.defaults.server_error'),
+)
+
+if settings.DEBUG:
+    urlpatterns += patterns(
+        '',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': settings.MEDIA_ROOT})
+    )
