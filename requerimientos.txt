@@ -1,2 +1,4 @@
 Django==1.6.2
 MySQL-python==1.2.4
+django-blog-zinnia
+django-scheduler

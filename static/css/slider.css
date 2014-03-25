@@ -67,6 +67,7 @@
 	font-weight: 400;
 	font-style: italic;
 }
+.da-slide p .bred{background: red;}
 .da-slide .da-img{
 	text-align: center;
 	width: 30%;
