@@ -1,0 +1,130 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<!-- Title and other stuffs -->
+	<title>{% block titulo %} {% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+
+	<link rel="shortcut icon" href="img/favicon/favicon.png">
+	{% block css %}{% endblock %}
+</head>
+
+<body>
+	<!-- Sliding panel starts-->
+	<div class="slidepanel">
+		<div class="container">
+			<div class="row">
+				<div class="span8">
+					<div class="spara"> 
+					<!-- Contact details -->
+						<p>
+							<i class="icon-envelope-alt lightblue"></i> <a href="#">comunidadverd@gmail.com</a> &nbsp; 
+							<i class="icon-twitter lightblue"></i> <a href="www.twitter.com/comunidadverd/">@comunidadverd</a> &nbsp; 
+							<i class="icon-desktop lightblue"></i> (+51)(01) 5685849
+						</p>
+					</div>
+				</div>
+				
+				<div class="span4">
+					<div class="social">
+						<!-- Social media icons. Repalce # with your profile links -->
+						<a href="https://www.facebook.com/comunidadverd" class="bblue"><i class="icon-facebook"></i></a>
+						<a href="https://plus.google.com/u/0/104168184455401932144/posts" class="borange"><i class="icon-google-plus"></i></a> 
+						<a href="https://twitter.com/comunidadverd" class="blightblue"><i class="icon-twitter"></i></a>
+						<a href="https://github.com/comunidad/" class="bgray"><i class="icon-github"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- Sliding panel ends-->
+
+	<!-- Header starts -->
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="span4">
+					<!-- Logo starts -->
+					<div class="logo">
+						<h1>
+							<a class="nolink" href="{% url 'inicio' %}">
+								Comunidad
+								<span class="green">Verde</span>
+							</a>
+						</h1>
+						<div class="logo-meta">Se el cambio que quieres ver</div>
+						<div class="clearfix"></div>
+					</div>
+					<!-- Logo ends -->
+				</div>
+				<div class="span8">
+					<!-- Navbar starts -->
+					<div class="navi pull-right">
+						<div id="ddtopmenubar" class="mattblackmenu">
+							<!-- Main navigation -->
+							<!-- Use the background color class in anchor tag for colorful menu -->
+							<ul>
+								<li><a href="{% url 'inicio' %}" class="blightblue">Home</a></li>
+								
+								<li><a href="#" rel="ddsubmenu2" class="bviolet">Pages</a>
+									<ul id="ddsubmenu2" class="ddsubmenustyle">
+										<li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+										<li><a href="{% url 'contactenos' %}">Contactenos</a></li>
+										<li><a href="{% url 'unete' %}">Unete</a></li>
+										<li><a href="{% url 'aliados' %}">Aliados</a></li>
+									</ul>
+								</li>
+								<li><a href="{% url 'zinnia_entry_archive_index' %}" class="bgreen">Blog</a></li>
+								<li><a href="{% url 'noticias' %}" class="bgreen">Noticias</a></li>
+								<li><a href="{% url 'cronograma' %}" class="borange">Cronograma</a></li>
+								<li><a href="{% url 'contactenos' %}" class="bblue">Contactenos</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="navis"></div>
+					<!-- Navbar ends -->
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="clearfix"></div>
+	<!-- Header ends -->
+	{% block body %} {% endblock %}
+	{% block contenedor %}{% endblock %}
+	{% block sidebar %}{% endblock %}
+	<!-- Footer -->
+	<!-- Below area is for testimonial -->
+ 	<div class="foot bgray">
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<p><em>"Se el cambio que quieres ver"</em></p>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<div class="copy">
+						<p>Copyright &copy; <a href="#">Comunidad.la</a> - <a href="{% url 'inicio' %}">Home</a> | <a href="{% url 'nosotros' %}">Nosotros</a> | <a href="{% url 'contactenos' %}">Contactenos</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</footer>
+
+	{% block js %}{% endblock %}
+</body>
+</html>

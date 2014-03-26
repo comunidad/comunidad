@@ -10,7 +10,8 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="">
-
+	
+	{% block css %}{% endblock %}
 	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap3.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "css/ddlevelsmenu-base.css" %}">
@@ -20,11 +21,6 @@
 	<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-responsive.css" %}">
 	<link rel="shortcut icon" href="img/favicon/favicon.png">
-
-	<!-- HTML5 Support for IE -->
-	<!--[if lt IE 9]>
-	<script src="js/html5shim.js"></script>
-	<![endif]-->
 </head>
 
 <body>
@@ -85,15 +81,14 @@
 							<ul>
 								<li><a href="{% url 'inicio' %}" class="blightblue">Home</a></li>
 								
-								<li><a href="#" rel="ddsubmenu2" class="bviolet">Pages</a>
+								<li><a href="{% url 'nosotros' %}" rel="ddsubmenu2" class="bviolet">Nosotros</a>
 									<ul id="ddsubmenu2" class="ddsubmenustyle">
-										<li><a href="{% url 'nosotros' %}">Nosotros</a></li>
-										<li><a href="{% url 'contactenos' %}">Contactenos</a></li>
+										<li><a href="{% url 'historia' %}">Historia</a></li>
 										<li><a href="{% url 'unete' %}">Unete</a></li>
 										<li><a href="{% url 'aliados' %}">Aliados</a></li>
 									</ul>
 								</li>
-								<li><a href="#" class="bgreen">Blog</a></li>
+								<li><a href="{% url 'zinnia_entry_archive_index' %}" class="bgreen">Blog</a></li>
 								<li><a href="{% url 'noticias' %}" class="bgreen">Noticias</a></li>
 								<li><a href="{% url 'cronograma' %}" class="borange">Cronograma</a></li>
 								<li><a href="{% url 'contactenos' %}" class="bblue">Contactenos</a></li>
@@ -106,84 +101,39 @@
 				</div>
 			</div>
 		</div>
+		<div class="container">{% block breadcrumbs %}{% endblock breadcrumbs %}</div>
 	</header>
 	<div class="clearfix"></div>
 	<!-- Header ends -->
-
-	{% block contenedor %}{% endblock %}
-
-	<!-- Footer -->
-	<!-- Below area is for testimonial -->
- 	<div class="foot bgray">
+	<div class="foot bgray">
 		<div class="container">
 			<div class="row">
 				<div class="span12">
-					<p><em>"Se el cambio que quieres ver"</em></p>
+					<p><em>" Cosas muy buenas estan ocurriendo, aunque usted no lo perciba "</em></p>
 				</div>
 			</div>
 		</div>		
 	</div>
 
+	{% block body %} {% endblock %}
+	{% block contenedor %}{% endblock %}
+	
+	<div class="container">
+		<div id="content" class="hfeed">
+			{% block content %}
+		
+			{% endblock content %}		
+		</div>
+
+		<div id="sidebar">
+			{% block sidebar %}
+			{% endblock sidebar %}
+		</div>
+	</div>
+
 	<footer>
 		<div class="container">
 			<div class="row">
-				<div class="widgets">
-					<div class="col-md-3 col-sm-6">
-						<div class="fwidget">
-							<h4>Contactenos</h4><hr/>
-							<i class="icon-home"></i> &nbsp; Rimac, cruze av. Jose Granda y av. Universitaria, mercado civico, Husares de Junin Mz. L. lote 09, casa de washin<hr/>
-							<i class="icon-phone"></i> &nbsp; 980 733 800 / 961062800<hr />
-							<i class="icon-envelope-alt"></i> &nbsp; <a href="mailto:#">contactar@cverde.org</a><hr/>
-							<div class="social">
-								<a href="https://www.facebook.com/comunidadverd" class="bblue"><i class="icon-facebook"></i></a>
-								<a href="https://plus.google.com/u/0/104168184455401932144/posts" class="borange"><i class="icon-google-plus"></i></a> 
-								<a href="https://twitter.com/comunidadverd" class="blightblue"><i class="icon-twitter"></i></a>
-								<a href="https://github.com/comunidad/" class="bgray"><i class="icon-github"></i></a>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-3 col-sm-6">
-						<div class="fwidget">
-							<h4>Categorias</h4>
-							<ul>
-								<li><a href="#">Eduación</a></li>
-								<li><a href="#">Valores</a></li>
-								<li><a href="#">Medio Ambiente</a></li>
-								<li><a href="#">abcde</a></li>
-								<li><a href="#">otras1</a></li>
-								<li><a href="#">xxx</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="col-md-3 col-sm-6">
-						<div class="fwidget">
-							<h4>Subscribete</h4>
-							<p>Suscribete a nuestras noticias</p>
-							<form class="form-inline">
-								<div class="input-append row-fluid">
-									<input type="text" class="span8" placeholder="Subscribete">
-									<button type="submit" class="btn btn-danger">Subscribete</button>
-								</div>
-							</form>
-						</div>
-					</div>
-
-					<div class="col-md-3 col-sm-6">
-						<div class="fwidget">
-							<h4>Posts Recientes</h4>
-							<ul>
-								<li><a href="#">Post ##########001</a></li>
-								<li><a href="#">Post ##########002</a></li>
-								<li><a href="#">Post ##########003</a></li>
-								<li><a href="#">Post ##########004</a></li>
-								<li><a href="#">Post ##########005</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-	
 				<div class="span12">
 					<div class="copy">
 						<p>Copyright &copy; <a href="#">Comunidad.la</a> - <a href="{% url 'inicio' %}">Home</a> | <a href="{% url 'nosotros' %}">Nosotros</a> | <a href="{% url 'contactenos' %}">Contactenos</a></p>
@@ -194,7 +144,6 @@
 		</div>
 	</footer>
 
-	<!-- JS -->
 	<script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/jquery.prettyPhoto.js" %}"></script>
@@ -206,6 +155,6 @@
 	<script type="text/javascript" src="{% static "js/custom.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/filter.js" %}"></script>
 	<script type="text/javascript" src="{% static "js/custom.js" %}"></script>
-	{% block javascript %}{% endblock %}
+	{% block js %}{% endblock %}
 </body>
 </html>

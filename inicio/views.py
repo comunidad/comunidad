@@ -22,3 +22,7 @@ def unete(request):
 	usuario = request.user
 	return render_to_response('inicio/unete.html',{'usuario': usuario},context_instance=RequestContext(request))
 
+def historia(request):
+	usuario = request.user
+	return render_to_response('inicio/historia.html',{'usuario': usuario},context_instance=RequestContext(request))
+
