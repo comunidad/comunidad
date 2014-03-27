@@ -987,3 +987,11 @@ footer .copy{border-top: 1px solid #ddd;padding: 10px 0px;margin-top: 10px;}
 .logo h1 .nolink{
 	text-decoration: none;
 }
+
+/* frase */
+.frace{
+	font-size: 1.4em;
+	padding: 8px 0 2px 0;
+	text-align: center;
+}
+

@@ -90,7 +90,7 @@
 								</li>
 								<li><a href="{% url 'zinnia_entry_archive_index' %}" class="bgreen">Blog</a></li>
 								<li><a href="{% url 'noticias' %}" class="bgreen">Noticias</a></li>
-								<li><a href="{% url 'cronograma' %}" class="borange">Cronograma</a></li>
+								<li><a href="{% url 'calendar_list' %}" class="borange">Calendario</a></li>
 								<li><a href="{% url 'contactenos' %}" class="bblue">Contactenos</a></li>
 							</ul>
 						</div>
@@ -101,11 +101,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="container">{% block breadcrumbs %}{% endblock breadcrumbs %}</div>
 	</header>
-	<div class="clearfix"></div>
 	<!-- Header ends -->
-	<div class="foot bgray">
+	<div class="frace bgray">
 		<div class="container">
 			<div class="row">
 				<div class="span12">
@@ -114,6 +112,8 @@
 			</div>
 		</div>		
 	</div>
+	<div class="clearfix"></div>
+	<div class="container">{% block breadcrumbs %}{% endblock breadcrumbs %}</div>
 
 	{% block body %} {% endblock %}
 	{% block contenedor %}{% endblock %}
