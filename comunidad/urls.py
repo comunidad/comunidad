@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.views.generic import TemplateView
 
-from actividades.views import cronograma
+from actividades.views import cronograma 
 #from django.views.generic.base import RedirectView
 
 from zinnia.sitemaps import TagSitemap
@@ -31,7 +31,7 @@ urlpatterns = patterns('',
 	#blog zinnia
 	#url(r'^$', RedirectView.as_view(url='/blog/')),
 	url(r'^blog/', include('zinnia.urls')),
-	url(r'^comments/', include('django.contrib.comments.urls')),
+	url(r'^comentarios/', include('django.contrib.comments.urls')),
 	url(r'^xmlrpc/$', 'django_xmlrpc.views.handle_xmlrpc'),
 	url(r'^i18n/', include('django.conf.urls.i18n')),
 	url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -59,16 +59,14 @@ urlpatterns += patterns(
 	url(r'^sitemap-(?P<section>.+)\.xml$', 'sitemap',{'sitemaps': sitemaps}),
 )
 
-urlpatterns += patterns(
-	'',
+urlpatterns += patterns('',
 	url(r'^403/$', 'django.views.defaults.permission_denied'),
 	url(r'^404/$', 'django.views.defaults.page_not_found'),
 	url(r'^500/$', 'django.views.defaults.server_error'),
 )
 
 if settings.DEBUG:
-	urlpatterns += patterns(
-		'',
+	urlpatterns += patterns('',
 		url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
 		url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
 	)

@@ -63,7 +63,7 @@ INSTALLED_APPS = (
 	'cursos',
 	'talleres',
 	'actividades',
-	'noticia',
+	#'noticia',
 )
 
 MIDDLEWARE_CLASSES = (
