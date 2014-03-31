@@ -99,25 +99,7 @@ LANGUAGE_CODE = 'es'
 
 LANGUAGES = (
 	('en', gettext('English')),
-	('fr', gettext('French')),
-	('de', gettext('German')),
 	('es', gettext('Spanish')),
-	('it', gettext('Italian')),
-	('nl', gettext('Dutch')),
-	('hu', gettext('Hungarian')),
-	('cs', gettext('Czech')),
-	('sk', gettext('Slovak')),
-	('lt', gettext('Lithuanian')),
-	('ru', gettext('Russian')),
-	('pl', gettext('Polish')),
-	('eu', gettext('Basque')),
-	('ca', gettext('Catalan')),
-	('tr', gettext('Turkish')),
-	('sv', gettext('Swedish')),
-	('hr_HR', gettext('Croatian')),
-	('pt_BR', gettext('Brazilian Portuguese')),
-	('fi_FI', gettext('Finnish (Finland)')),
-	('zh_CN', gettext('Simplified Chinese')),
 )
 
 TIME_ZONE = 'America/Lima'
