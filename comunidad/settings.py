@@ -120,6 +120,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 from zinnia.xmlrpc import ZINNIA_XMLRPC_METHODS
 XMLRPC_METHODS = ZINNIA_XMLRPC_METHODS
 
+
 try:
     from local_settings import *
 except ImportError:

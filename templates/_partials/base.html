@@ -76,11 +76,8 @@
 					<!-- Navbar starts -->
 					<div class="navi pull-right">
 						<div id="ddtopmenubar" class="mattblackmenu">
-							<!-- Main navigation -->
-							<!-- Use the background color class in anchor tag for colorful menu -->
 							<ul>
 								<li><a href="{% url 'inicio' %}" class="blightblue">Home</a></li>
-								
 								<li><a href="{% url 'nosotros' %}" rel="ddsubmenu2" class="bviolet">Nosotros</a>
 									<ul id="ddsubmenu2" class="ddsubmenustyle">
 										<li><a href="{% url 'historia' %}">Historia</a></li>
@@ -88,8 +85,9 @@
 										<li><a href="{% url 'aliados' %}">Aliados</a></li>
 									</ul>
 								</li>
-								<li><a href="{% url 'zinnia_entry_archive_index' %}" class="bgreen">Blog</a></li>
-								<li><a href="{% url 'noticias' %}" class="bgreen">Noticias</a></li>
+								<li><a href="{% url 'zinnia_entry_archive_index' %}" class="bgreen">Actualidad</a></li>
+								<li><a href="#" class="blightblue">Noticias</a></li>
+								<li><a href="{% url 'proyectos' %}" class="bgreen">Proyectos</a></li>
 								<li><a href="{% url 'calendar_list' %}" class="borange">Calendario</a></li>
 								<li><a href="{% url 'contactenos' %}" class="bblue">Contactenos</a></li>
 							</ul>

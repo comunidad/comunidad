@@ -30,7 +30,7 @@ urlpatterns = patterns('',
 	
 	#blog zinnia
 	#url(r'^$', RedirectView.as_view(url='/blog/')),
-	url(r'^blog/', include('zinnia.urls')),
+	url(r'^actualidad/', include('zinnia.urls')),
 	url(r'^comentarios/', include('django.contrib.comments.urls')),
 	url(r'^xmlrpc/$', 'django_xmlrpc.views.handle_xmlrpc'),
 	url(r'^i18n/', include('django.conf.urls.i18n')),

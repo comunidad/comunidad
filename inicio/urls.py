@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from inicio.views import nosotros, contactenos, unete, aliados, historia
+from inicio.views import nosotros, contactenos, unete, aliados, historia, proyectos
 
 urlpatterns = patterns('',
 	url(r'nosotros','inicio.views.nosotros', name='nosotros'),
@@ -7,4 +7,5 @@ urlpatterns = patterns('',
 	url(r'unete','inicio.views.unete', name='unete'),
 	url(r'aliados','inicio.views.aliados', name='aliados'),
 	url(r'historia','inicio.views.historia', name='historia'),
+	url(r'proyectos','inicio.views.proyectos', name='proyectos'),
 )
