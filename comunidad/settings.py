@@ -56,6 +56,9 @@ INSTALLED_APPS = (
 	'django_xmlrpc',
 	#usos para el calendario
 	'schedule',
+    #'django.contrib.humanize',
+    #'django_nose',
+    #'django_coverage',
     'south',
 	#usos generales de aplicacion nativa
 	'blog',
